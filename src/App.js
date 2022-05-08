@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useEffect, useState} from 'react';
 
 function App() {
+
+  const [spaceShipName, setSpaceShipName] = useState([]);
+
+  useEffect(() => {
+    fetch("https://swapi.dev/api/starships/?page1")
+    .then(resp => resp.json())
+    .then((resp) => {
+      setSpaceShipName(resp.results)
+    })
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      
+    <ul>
+        {spaceShipName &&
+          spaceShipName.map(({ name , model }) => (
+            <li key={ name }>
+              { name }<br />
+              { model }
+            </li>
+          ))}
+      </ul>
+    </>
   );
 }
 
