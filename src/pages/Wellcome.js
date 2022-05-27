@@ -7,6 +7,7 @@ export default function Wellcome(){
             <ul>
                 <li><Link to="./">Wellcome</Link></li>
                 <li><Link to= "./Spaceshiplist">Spaceshiplist</Link></li>
+            
             </ul>
         </div>
     )
