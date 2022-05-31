@@ -8,8 +8,8 @@ export default (props) => (
     <BrowserRouter>
         <Routes>
             <Route path="/" element = {< Wellcome />} />
-            <Route path="/spaceshiplist/" element = {<Spaceshiplist lb={props.la}/>} />
-            <Route path="/spaceshiplist/:id" element = {<Spaceshipdetail />} />
+            <Route path="/spaceshiplist/" element = {<Spaceshiplist listaNaves={props.listaNaves} mostrarNave={props.mostrarNave} spaceShipName={props.spaceShipName}  />} />
+            <Route path="/spaceshiplist/:id" element = {<Spaceshipdetail listaNaves={props.listaNaves} mostrarNave={props.mostrarNave} spaceShipName={props.spaceShipName} />}  />
             <Route path="*" element = {<div>404</div>} />
         </Routes>
     </BrowserRouter>

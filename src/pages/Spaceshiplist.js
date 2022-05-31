@@ -1,16 +1,16 @@
+/* import {useParams} from 'react-router-dom' */
 
-import {useParams} from 'react-router-dom'
 
-export default function Spaceshiplist(props) {
-  const params = useParams();
-  console.log(params)
 
-  
+export default function Spaceshiplist(props, index) {
+/*  const params = useParams();
+ */
     return (
       <>
-        <ul>           
-              {props.lb}
+        <ul>
+          {props.listaNaves}
         </ul>
+
       </>
     );
   }
