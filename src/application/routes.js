@@ -3,6 +3,8 @@ import Wellcome from '../pages/Wellcome'
 import Spaceshiplist from '../pages/Spaceshiplist'
 import Spaceshipdetail from '../pages/Spaceshipdetail'
 import Navbar from '../pages/Navbar'
+import Login from '../pages/Login'
+import Registration from '../pages/Registration'
 
 export default (props) => (
     
@@ -13,6 +15,10 @@ export default (props) => (
             <Route path="/spaceshiplist/" element = {<Spaceshiplist listaNaves={props.listaNaves} spaceShipsData={props.spaceShipsData} moreSpaceshipList={props.moreSpaceshipList} />} />
             <Route path="/spaceshiplist/:id" element = {<Spaceshipdetail spaceShip={props.spaceShip} spaceShipsData={props.spaceShipsData} />}  />
             <Route path="*" element = {<div>404</div>} />
+            <Route path="/Login" element = {< Login />} />
+            <Route path="/Registration" element = {< Registration />} />
+            
+            
         </Routes>
     </BrowserRouter>
 )

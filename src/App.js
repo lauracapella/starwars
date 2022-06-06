@@ -1,19 +1,19 @@
+import { useState, useEffect} from "react";
 
-import React, { useEffect, useState } from 'react';
 import Routes from "./application/routes";
-import axios from "axios"
+import Registration from "./pages/Registration";
 
 
 export default function App() {
 
   const [spaceShipsData, setSpaceShipsData] = useState([]);
   const [currentStarship, setCurrentStarship] = useState({});
-/*   const [detalleNave, setDetalleNave] = useState();
- */  const [count, setCount] = useState(1)
+/*   const [detalleNave, setDetalleNave] = useState();*/  
+  const [count, setCount] = useState(1)
 
-  const [username, setUsername] = useState("user1")
+ /*  const [username, setUsername] = useState("user1")
   const [password, setPassword] = useState("pass")
-  const [user, setUser] = useState()
+  const [user, setUser] = useState() */
 
  /*  const handleSubmit = async e => {
     e.preventDefault();
@@ -25,10 +25,14 @@ export default function App() {
     
   }; */
 
-  const handleSubmit = () => {
+/*   const handleSubmit = () => {
     localStorage.setItem('Name', username);
     localStorage.setItem('Password', password);
- };
+ }; */
+
+/*  if (user) {
+  return <div>{user.name} is logged in</div>
+} */
  
  
   useEffect(() => {
@@ -47,22 +51,24 @@ export default function App() {
     }
   }
 
-  if (user) {
-    return <div>{user.name} is logged in</div>
-  }
+
+
+
 
   return (
     <>
-    
                
       <Routes 
         spaceShipsData={spaceShipsData}
-     
         spaceShip={currentStarship} 
         moreSpaceshipList={moreSpaceshipList} >
+         
       </Routes>
+      
+      
+      
 
-      <form onSubmit={handleSubmit}>
+     {/*  <form onSubmit={handleSubmit}>
       <label htmlFor="username">Username: </label>
       <input
         type="text"
@@ -80,7 +86,7 @@ export default function App() {
         />
       </div>
       <button type="submit">Login</button>
-    </form>
+    </form> */}
       
     </>
   )

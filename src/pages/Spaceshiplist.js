@@ -2,6 +2,8 @@
 
 
 import { Link } from 'react-router-dom'
+
+
 export default function Spaceshiplist(props, index) {
 /*  const params = useParams();
  */
@@ -23,6 +25,7 @@ const listaNaves = props.spaceShipsData.map((starship, index) => (
 
     return (
       <>
+
 
         <ul>
           {listaNaves}
