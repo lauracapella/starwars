@@ -12,11 +12,11 @@ export default function Menu(){
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="m-auto ">
         <Nav.Link href="./" >Wellcome</Nav.Link>
-        <Nav.Link href="./Spaceshiplist">Spaceshiplist</Nav.Link>
+        <Nav.Link href="../Spaceshiplist">Spaceshiplist</Nav.Link>
       </Nav>
       <Nav className="md-auto ">
-      <Nav.Link href="./Login">Login</Nav.Link>
-      <Nav.Link href="./Registration">SignUp</Nav.Link>
+      <Nav.Link href="../Login">Login</Nav.Link>
+      <Nav.Link href="../Registration">SignUp</Nav.Link>
     </Nav>
     </Navbar.Collapse>
   </Container>

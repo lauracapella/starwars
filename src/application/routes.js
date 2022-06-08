@@ -17,8 +17,6 @@ export default (props) => (
             <Route path="*" element = {<div>404</div>} />
             <Route path="/Login" element = {< Login />} />
             <Route path="/Registration" element = {< Registration />} />
-            
-            
         </Routes>
     </BrowserRouter>
 )
