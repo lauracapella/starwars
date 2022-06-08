@@ -13,7 +13,6 @@ function Registration() {
        e.preventDefault();
         if(!name || !email || !password){
             setFlag(true)
-            console.log('handlesubmit')
         }else{
             setFlag(false)
             console.log('saved in localstorage')
@@ -33,11 +32,11 @@ function Registration() {
 
 
     return ( 
-        <>
+        <div className="login_wrap m-auto mt-5">
 
         {login ? (
         
-        <form >
+        <form className="form-group m5" >
             <h1>Registrer</h1>
             <div>
                 <label>Name:</label>
@@ -45,6 +44,7 @@ function Registration() {
                 type='text'
                 placeholder="Enter your name"
                 onChange={(e) => setName(e.target.value)}
+                className="form-control"
                 /> 
                 <br/>
 
@@ -53,6 +53,7 @@ function Registration() {
                 type='text'
                 placeholder="Enter your email"
                 onChange={e => setEmail(e.target.value)}
+                className="form-control"
                 />
                 <br/>
 
@@ -61,10 +62,13 @@ function Registration() {
                 type='text'
                 placeholder="Enter your password"
                 onChange={e => setPassword(e.target.value)}
+                className="form-control"
                 />
                 
             </div>
-            <button type='submit' onClick={handleSubmit}>Register</button>
+            <div className='float-end'>
+                <button className='btn btn-light mt-2 ' type='submit' onClick={handleSubmit}>Register</button>
+            </div>
             <p onClick={handleClick}>Already registered {''} Login?</p>
 
              {flag && (
@@ -75,7 +79,7 @@ function Registration() {
     ) : (
         <Login/>
         )}
-        </>
+        </div>
     )
 }
 

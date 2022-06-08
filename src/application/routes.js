@@ -2,14 +2,14 @@ import {BrowserRouter, Route, Routes, useParams} from 'react-router-dom';
 import Wellcome from '../pages/Wellcome'
 import Spaceshiplist from '../pages/Spaceshiplist'
 import Spaceshipdetail from '../pages/Spaceshipdetail'
-import Navbar from '../pages/Navbar'
+import Menu from '../pages/Menu'
 import Login from '../pages/Login'
 import Registration from '../pages/Registration'
 
 export default (props) => (
     
     <BrowserRouter>
-        <Navbar />
+        <Menu />
         <Routes>
             <Route path="/" element = {< Wellcome />} />
             <Route path="/spaceshiplist/" element = {<Spaceshiplist listaNaves={props.listaNaves} spaceShipsData={props.spaceShipsData} moreSpaceshipList={props.moreSpaceshipList} />} />

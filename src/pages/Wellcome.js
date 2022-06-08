@@ -1,13 +1,14 @@
 import React from "react";
-import {Link} from "react-router-dom"
-import Navbar from './Navbar'
-
 
 export default function Wellcome(){
     return(
         <div>
-           soc benvinguda
-                       
+            <div className="stars"></div>
+            <div className="twinkling"></div> 
+            <div className="clouds"></div>
+            <div className="title">
+                <h1>A closer look to the spaceships</h1>
+            </div>
         </div>
     )
 }

@@ -1,38 +1,29 @@
-/* import {useParams} from 'react-router-dom' */
-
-
 import { Link } from 'react-router-dom'
 
 
 export default function Spaceshiplist(props, index) {
-/*  const params = useParams();
- */
 
 const imgUrlBase = "https://starwars-visualguide.com/assets/img/starships/"
-
-
 const listaNaves = props.spaceShipsData.map((starship, index) => (
-  <li key={index}>
+   
+  <div className='spaceship_names p2' key={index}>
     <Link to={`/spaceshiplist/${index}`}  >
       <h3>{starship.name}</h3>
       <h4>{starship.model}</h4><br />
-      <img src={imgUrlBase + index + '.jpg'} />
+      {/* <img src={imgUrlBase + index + '.jpg'} /> */}
     </Link>
-  </li>
+  </div>
 ))
-
-
 
     return (
       <>
-
-
-        <ul>
+        <div className="lista-naves-wrap">
+        <div className="d-flex flex-row flex-wrap lista_naves">
           {listaNaves}
-        </ul>
-        <button onClick={props.moreSpaceshipList}>More spaceships ++ </button>
+        <button className='boton_mas' onClick={props.moreSpaceshipList}> See more spaceships >> </button>
+        </div>
+        </div>
         <br />
-
       </>
     );
   }

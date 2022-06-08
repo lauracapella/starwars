@@ -24,21 +24,21 @@ const Login = () =>{
             setHome(!home)
             setFlag(false)
         }
-
     }
     
     return(
-        <>
+        <div className="login_wrap m-auto mt-5">
 
         { home ? (
          
-         <form onSubmit={ handleLogin }>
+         <form className='form-group' onSubmit={ handleLogin }>
              <h1>Login</h1>
                 <label>Email:</label>
                 <input
                 type='text'
                 placeholder="Enter your email"
                 onChange={e => setEmailLog(e.target.value)}
+                className="form-control"
                 />
                 <br/>
 
@@ -47,9 +47,11 @@ const Login = () =>{
                 type='text'
                 placeholder="Enter your password"
                 onChange={e => setPasswordLog(e.target.value)}
+                className="form-control"
                 />
-
-                <button type='submit'>Login</button>
+                <div className='float-end'>
+                    <button className='btn btn-light mt-2 ' type='submit'>LOG IN</button>
+                </div>
            
              {flag && (
                 <p>Please fill in every field</p>
@@ -58,7 +60,7 @@ const Login = () =>{
          ) : (
              <Wellcome />
          ) }
-        </>
+        </div>
       
         
         )}
