@@ -10,7 +10,7 @@ export default function Spaceshipdetail(props){
 
  const selectStarship = props.spaceShipsData[id];
 
-console.log("selectStarship!!!: ", selectStarship)
+ console.log("ver pilotos: ", selectStarship.pilots)
 
 return(
     <div className='detail_wrap'>

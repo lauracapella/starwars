@@ -8,6 +8,8 @@ const Login = () =>{
     const [passwordLog, setPasswordLog] = useState('');
     const [flag, setFlag] = useState(false);
     const [home, setHome] = useState(true);
+    const[isAutheticated, setisAutheticated] = useState(false);
+
 
     function handleLogin(e){
         e.preventDefault();
@@ -16,13 +18,13 @@ const Login = () =>{
 
         if(!emailLog || !passwordLog){
             setFlag(true)
-            console.log('empty')
         } else if (passwordLog !== pass || emailLog !== mail){
             setFlag(true)
 
         }else{
             setHome(!home)
             setFlag(false)
+            setisAutheticated(true);
         }
     }
     
