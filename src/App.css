@@ -2,16 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -35,4 +25,133 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.menu_nav{
+  z-index: 100;
+}
+
+.title h1{
+  font-size: 36px;
+  font-family: 'Lato', sans-serif;
+  margin-top: 40vh;
+  margin-left: auto;
+  margin-right:auto;
+  text-align: center;
+
+  /* Stryling the text and giving it gradiant */
+  color:#ffffff;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+
+  /* Make sure text is infront of background images */
+  display:block;
+  position: relative;
+  z-index: 33;
+}
+
+@keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+  from {background-position:0 0;}
+  to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+width:100%;
+height:100%;
+display:block;
+}
+
+.stars {
+background:#000 url(./img/stars.png) repeat top center;
+z-index:10;
+}
+
+.twinkling{
+background:transparent url(./img/twinkling.png) repeat top center;
+z-index:11;
+animation:move-twink-back 200s linear infinite;
+}
+
+.clouds{
+  background:transparent url(./img/clouds.png) repeat top center;
+  z-index:12;
+  opacity: .4;
+  animation:move-clouds-back 200s linear infinite;
+}
+
+.background_all{
+  background-color: #000;
+  min-height: 100vh;
+}
+
+h3{
+ font-size: 16px !important;
+ text-transform: uppercase
+}
+
+h4{
+  font-size: 13px !important;
+}
+
+.spaceship_names {
+  background-color: #111111;
+  margin: 10px;
+  padding: 30px;
+  min-width: 360px;
+}
+
+.boton_mas{
+  background-color: #222222;
+  margin: 10px;
+  padding: 30px;
+  min-width: 360px;
+  color: #eee;
+  text-transform: uppercase;
+}
+
+.lista_naves_wrap {
+width: 80%;
+
+}
+
+
+.lista_naves {
+  display: block;
+  margin-left: 50px;
+  width: 92%;
+ 
+
+}
+
+.spaceship_names a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.spaceship_names a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #222222;
+}
+
+.detail_wrap{
+  padding: 63px;
+  color: #ccc;
+}
+
+.login_wrap{
+  color: #ccc;
+  width: 500px;
 }

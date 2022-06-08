@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import { useState, useEffect} from "react";
 import './App.css';
+import Routes from "./application/routes";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+export default function App() {
+
+  const [spaceShipsData, setSpaceShipsData] = useState([]);
+  const [currentStarship, setCurrentStarship] = useState({});
+  const [count, setCount] = useState(1)
+
+ 
+  useEffect(() => {
+    fetch("https://swapi.dev/api/starships/?page=" + count)
+      .then(resp => resp.json())
+      .then((resp) => {
+        setSpaceShipsData(resp.results)
+      })
+  }, [count]);
+
+  const moreSpaceshipList = () => {
+    if (count >= 1 && count <= 3) {
+      setCount(count + 1)
+    } else {
+      setCount(1)
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className="background_all">
+               
+      <Routes 
+        spaceShipsData={spaceShipsData}
+        spaceShip={currentStarship} 
+        moreSpaceshipList={moreSpaceshipList} >
+      </Routes>
 
-export default App;
+    </div>
+  )
+}
